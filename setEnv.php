@@ -1,1 +1,1 @@
-<?php const DEVELOPMENT = false; ?>
+<?php const DEVELOPMENT = true; ?>

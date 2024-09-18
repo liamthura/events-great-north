@@ -4,7 +4,6 @@ You MUST NOT in any way change the php code provided OR the code within the FORM
 
 You MAY add Javascript for task 4.
 You MAY modify the page to add your own navigation menu and link to your own stylesheet using additional html or php. However, please note that styling will not be marked for this assignment. -->
-
 <?php
 session_start();
 include_once('functions.php');
@@ -111,7 +110,4 @@ session_timeout_chk();
 <script src="functions.js?version=1"></script>
 </body>
 </html>
-<?php
-ob_end_flush();
-?>
 
