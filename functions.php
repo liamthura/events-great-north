@@ -42,7 +42,7 @@ set_error_handler("errorHandler");
 
 // function to log error to a server file
 function log_error ($e) {
-    $fileHandle = fopen('./logs/errors.log', 'ab');
+    $fileHandle = fopen('/logs/errors.log', 'ab');
     $errorDate = date('Y-m-d H:i:s');
     $errorMessage = $e->getMessage();
 
