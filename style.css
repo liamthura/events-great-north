@@ -1,0 +1,374 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	color: #212121;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 100%;
+}
+
+#body-wrapper {
+	width: 95%;
+	max-width: 1024px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-rows: [header] auto [navigation] auto [banner] auto [main] auto [footer] auto;
+	grid-template-areas:
+		"header"
+		"nav"
+		"banner"
+		"main"
+		"footer";
+}
+
+header {
+	grid-area: header;
+	margin: 2rem 0 3rem 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#siteLogo {
+	max-width: 25rem;
+}
+
+.admin-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.admin-btn {
+	display: block;
+	text-align:left;
+	text-decoration:none;
+	font-weight: bold;
+	background-color: #212121;
+	color: white;
+	padding: 10px 20px;
+	margin-left: 20px;
+}
+
+.mainNav {
+	grid-area: nav;
+	display: flex;
+	justify-content: space-between;
+	background-color: #212121;
+	margin: 1rem 0;
+}
+
+nav ul {
+	display: flex;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: #212121;
+}
+
+nav li {
+	margin: 0;
+	padding: 0;
+}
+
+nav a {
+	display: block;
+	text-align:left;
+	text-decoration:none;
+	font-weight: bold;
+	color: white;
+	padding: 10px 20px;
+}
+
+nav a.active {
+	/*box-sizing: border-box;*/
+	/*box-shadow: 0 -5px inset lightgray;*/
+	background-color: #495057;
+}
+
+nav a:hover {
+	color: black;
+	background-color: lightGray;
+}
+
+#adminNav a:hover {
+	color: white;
+	background-color: #ff5757;
+}
+
+.banner {
+	grid-area: banner;
+}
+.banner img {
+	height: 200px;
+	width: 100%;
+	object-fit: cover;
+}
+
+main {
+	grid-area: main;
+	/*padding: 1rem 0;*/
+	background-color: aliceblue;
+	padding: 10px;
+}
+
+main#with-sidebar {
+	display: grid;
+	grid-template-columns: [content] 3fr  [sidebar] 1fr;
+	grid-template-areas: "content sidebar";
+	gap: 1rem;
+}
+
+main .with-sidebar .content {
+	grid-area: content;
+	width: 100%;
+}
+
+aside {
+	grid-area: sidebar;
+	width: 100%;
+}
+
+#offer {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 10px;
+	background-color: #3D3B40;
+	color: white;
+}
+
+#offer h2{
+	font-size: 1rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-bottom: 1px solid #cccccc;
+	height: 100%;
+}
+
+#offer .offer-cta {
+	text-decoration: none;
+	background-color: #eeeeee;
+	color: #212121;
+	padding: 8px;
+	text-align: center;
+	font-weight: bold;
+}
+#offer .offer-cta:hover {
+	background-color: #dddddd;
+}
+
+footer {
+		grid-area: footer;
+		margin-top: 1.5em;
+		font-size: 0.75em;
+		font-style: italic;
+		text-align: center;
+}
+/*.formGrid {*/
+/*	display: flex;*/
+/*	width: 100%;*/
+/*	max-width: 25rem;*/
+/*	flex-direction: column;*/
+/*}*/
+
+.formContainer {
+	display: grid;
+	width: 100%;
+}
+
+label {
+	text-align: left;
+	margin: 1rem 0 0.5rem 0;
+}
+
+
+input, select {
+	height: 2rem;
+	font-size: 1rem;
+	padding: 0 8px;
+}
+
+textarea {
+	font-size: 1rem;
+	font-family: inherit;
+	padding: 8px;
+}
+
+select {
+	text-transform: capitalize;
+}
+
+input[type="submit"] {
+	all: unset;
+	margin-top: 2rem;
+	padding: 5px;
+	text-align: center;
+	background-color: #212121;
+	color: white;
+	height: 1.5rem;
+	width: 10rem;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+input[type="submit"]:disabled {
+	background-color: darkgrey;
+	font-weight: bold;
+	cursor: not-allowed;
+}
+
+fieldset {
+	background-color: lightpink;
+	border: 4px dotted red;
+	border-radius: 10px;
+}
+
+legend {
+	background-color: darkred;
+	color: white;
+	border-radius: 10px;
+	padding: 7px 12px 7px 12px;
+	margin-bottom: 5px;
+}
+
+#editEventForm #eventID {
+	background-color: lightcyan;
+	cursor: not-allowed;
+}
+
+.warning {
+	color: #eb675e;
+}
+
+.hide {
+	display: none;
+}
+
+#eventTable {
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	min-width: 400px;
+}
+#eventTable thead tr {
+	background-color: #212121;
+	color: #ffffff;
+	text-align: left;
+}
+
+#eventTable th,
+#eventTable td {
+	padding: 12px 15px;
+}
+
+#eventTable tbody tr {
+	border-bottom: 1px solid #CBE4DE;
+}
+
+#eventTable tbody tr:nth-of-type(even) {
+	background-color: #eeeeee;
+}
+
+#eventTable tbody tr:last-of-type {
+	border-bottom: 2px solid #009879;
+}
+
+#eventTable tbody tr:hover {
+	cursor: pointer;
+	font-weight: bold;
+	color: #212121;
+}
+
+
+
+#bookingForm section>h2,
+#bookingForm section>h3,
+#bookingForm section>p{
+	margin: 1rem 0;
+}
+
+.item {
+	display: grid;
+	grid-template-columns: 1fr 100px;
+	grid-template-rows: 1fr 1.5rem 1.5rem;
+	gap: 6px;
+	grid-template-areas:
+    "title checkbox"
+    "date checkbox"
+    "meta checkbox";
+	width: 100%;
+	border: 1px solid #212121;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	background-color: white;
+}
+.event-date, .event-meta {
+	display: flex;
+	gap: 2rem;
+}
+
+.event-title {
+	grid-area: title;
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+.event-date {
+	grid-area: date;
+}
+.event-meta {
+	grid-area: meta;
+}
+.chosen {
+	grid-area: checkbox;
+	align-self: center;
+	cursor: pointer;
+	display: block;
+}
+.chosen input {
+	display: none;
+}
+
+.chosen .checked-icon,
+.chosen .unchecked-icon {
+	width: 36px;
+}
+
+.chosen .checked-icon {
+	display: none;
+}
+
+.chosen input:checked ~ .checked-icon{
+	display: inline;
+}
+
+.chosen input:checked ~ .unchecked-icon{
+	display: none;
+}
+
+.delivery-options-container {
+	display: flex;
+	align-items: center;
+}
+
+.delivery-options-container label,
+#termsText {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.credits-wrapper ul {
+	list-style-position: outside;
+	margin-left: 1rem;
+}
+
+.credits-wrapper ul li {
+	margin-bottom: 1rem;
+}
